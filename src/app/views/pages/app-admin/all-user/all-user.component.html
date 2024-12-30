@@ -1,0 +1,97 @@
+<h3 style="color: #006680;" *ngIf="!selectedJob">List of Jobs</h3>
+
+<hr style="color: #222; height:1.5px" *ngIf="!selectedJob">
+
+<div class=" stretch-card mt-3" *ngIf="!selectedJob">
+
+  <div class="card overflow-auto col-lg-12 col-xl-12 col-sm-12">
+    <div class="card-body">
+      <div class="table overflow-auto">
+        <table class="table table-hover mb-0">
+          <thead>
+            <tr>
+              <th class="pt-0 col-1">ID</th>
+              <th class="pt-0 col-2">Title</th>
+              <th class="pt-0">Company</th>
+              <th class="pt-0">Location</th>
+              <th class="pt-0">Action</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <!-- " -->
+            <ng-container
+              *ngFor="let item of jobs | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ;let i=index">
+              <tr style="cursor: pointer;">
+                <td>{{item.jobId}}</td>
+                <td class="col-2">{{item.title}}</td>
+                <td>{{item.company}}</td>
+                <td>{{item.location}}</td>
+                <td>
+                  <button class="btn btn-primary" style="color: white;" [routerLink]="['/job', item.jobId]">Show
+                    Details</button>
+                  <button class="btn btn-success float-end" style="margin-bottom: 10px;" (click)="openApplyForm(item)">
+                    Apply for Job
+                  </button>
+                </td>
+
+              </tr>
+
+
+            </ng-container>
+
+
+          </tbody>
+        </table>
+      </div>
+      <!-- " -->
+      <ngb-pagination class="d-flex justify-content-center mt-5" [collectionSize]="jobs.length" [(page)]="page"
+        [pageSize]="pageSize"></ngb-pagination>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedJob" class="job-apply-form mt-4">
+  <h3 style="color: #006680;">Applying for Job</h3>
+
+  <hr style="color: #222; height:1.5px">
+
+  <h4>Apply for Job: {{ selectedJob.title }}</h4>
+  <form [formGroup]="applyForm" (ngSubmit)="applyForJob()">
+    <div class="mb-3">
+      <label for="ApplicantName" class="form-label me-auto">Your Name</label>
+      <input type="text" class="form-control" id="ApplicantName" formControlName="ApplicantName" />
+      <div *ngIf="applyForm.get('ApplicantName')?.invalid && applyForm.get('ApplicantName')?.touched"
+        class="text-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="ApplicantEmail" class="form-label">Your Email</label>
+      <input type="text" class="form-control" id="ApplicantEmail" formControlName="ApplicantEmail" />
+      <div *ngIf="applyForm.get('ApplicantEmail')?.invalid " class="text-danger">
+        <div *ngIf="applyForm.get('ApplicantEmail')?.errors?.['required'] " class="text-danger">
+          email is required
+        </div>
+      </div>
+      <div *ngIf="applyForm.get('ApplicantEmail')?.errors?.['email']" class="text-danger">
+        Input must be email
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="resume" class="form-label">Upload Resume</label>
+      <input type="file" class="form-control" id="resume" (change)="onFileChange($event)" formControlName="resume" />
+      <div *ngIf="applyForm.get('resume')?.invalid && applyForm.get('resume')?.touched" class="text-danger">
+        Please upload your resume.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="applyForm.invalid">
+      Submit Application
+    </button>
+  </form>
+</div>

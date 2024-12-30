@@ -1,0 +1,21 @@
+<div class="main-wrapper">
+
+
+
+
+
+  <div class="page-content w-100">
+
+    <!-- Spinner for lazyload modules -->
+    <div *ngIf="isLoading" class="spinner-wrapper">
+      <div class="spinner">{{'Layout.Loading'}}</div>
+    </div>
+
+    <div contentAnimate *ngIf="!isLoading">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,251 @@
+
+
+
+.btnview{
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  color: #005883;
+  border: solid 2px #005883;
+  font-weight: bold;
+  background-color: #fff;
+  z-index: 1000;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.divorg{
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+
+.form-control.is-invalid, .form-select.is-invalid{
+  border-color:  #ccc !important;
+ }
+
+ .btnsave{
+  color: #fff !important;
+  font-weight: bold;
+  background-color: #005883;
+  width: 15%;
+
+ }
+
+
+
+
+.divprofileImg{
+ width: 80%;
+ height: 60%;
+ text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.divprofileImg Img{
+  width: 60%;
+  height: 80%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+
+$base-color:#005883;
+::ng-deep .multiselect-item-checkbox input[type='checkbox'] + div:before {
+
+  color: $base-color !important;
+
+  border: 2px solid $base-color !important;
+
+}
+
+::ng-deep .multiselect-item-checkbox input[type='checkbox'] + div:after {
+  box-sizing: content-box;
+  content: '';
+  background-color: $base-color !important;
+
+}
+::ng-deep.multiselect-item-checkbox input[type='checkbox']:checked + div:before {
+  animation: borderscale 200ms ease-in;
+  background: $base-color !important;
+}
+
+::ng-deep .multiselect-item-checkbox input[type='checkbox']:checked + div:after {
+  transform: rotate(-45deg) scale(1);
+}
+
+
+//roles
+.btnview{
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  color: #006680;
+  border: solid 2px #006680;
+  font-weight: bold;
+  background-color: #fff;
+  z-index: 1000;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.public{
+  cursor: pointer;
+}
+.published-box {
+  margin-top: 0px;
+  margin-right: 16px;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  span {
+    left: 0px;
+    right: 50px;
+    background-color: #04bd75;
+    opacity: 0.7;
+    padding: 5px;
+    font-size: 16px;
+    z-index: unset;
+    height: auto;
+    top: 30px;
+    transform: rotate(45deg);
+    z-index: 1;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    width: 225px;
+    padding: 4px 44px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+  }
+}
+
+
+
+.popup-backgroundupload  {
+  position: fixed;
+display: block;
+  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+#content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.popup-backgroundupload .divcolse{
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  background-color: #00cafd;
+  border-radius: 50%;
+  padding: 0px 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.popup-backgroundupload button{
+ font-size: 25px;
+   color: #fff;
+   font-weight: bold;
+   cursor: pointer;
+
+}
+#content{
+
+width: 60%;
+height: 80%;
+
+}
+
+.eye{
+  color: #006680;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.head-task
+{
+  padding: 5px;
+  background-color: #006680;
+  border: 2px solid #006680;
+  color:#fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
+.form-control.is-invalid, .form-select.is-invalid{
+  border-color:  #ccc !important;
+ }
+
+ .card{
+ border: none;
+ border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ -o-border-radius: 10px;
+}
+
+
+
+
+
+
+
+/************** */
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+ul.stepper li.completed a .circle
+{
+  background-color :#005883 !important;
+}
+ul.stepper li.active a .circle
+{
+  background-color: #999 !important;
+}
+
+
+@media only screen and (max-width: 968px) {
+
+.typeorg{
+  margin: 0 !important;
+  margin-top: 10px !important;
+}
+
+.btnsave{
+
+  width: 90%;
+
+ }
+
+ }
+ @import './../../../../assets/scss/custom';

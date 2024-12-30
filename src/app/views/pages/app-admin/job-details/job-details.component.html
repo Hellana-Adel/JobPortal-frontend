@@ -1,0 +1,15 @@
+<button class="btn btn-secondary mt-5 mx-5" (click)="goBack()">Back</button>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-90">
+    <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%; border-radius: 15px;">
+        <div class="card-body">
+            <h3 class="text-center mb-4" style="color: #006680;">Job Details</h3>
+            <hr class="mb-4">
+            <p><strong>Title:</strong> {{ jobDetails.title }}</p>
+            <p><strong>Company:</strong> {{ jobDetails.company }}</p>
+            <p><strong>Location:</strong> {{ jobDetails.location }}</p>
+            <p><strong>Description:</strong></p>
+            <p>{{ jobDetails.description }}</p>
+        </div>
+    </div>
+</div>
